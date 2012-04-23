@@ -1,0 +1,25 @@
+# Note: this file is for version 0.9 of Vagrant.
+
+Vagrant::Config.run do |config|
+
+  config.vm.box = "{{ project_ name }}"  
+  
+  config.vm.box_url = "https://github.com/downloads/Threespot/deployment/threespot-debian-squeeze-4.1.2.box"
+
+  config.vm.network :hostonly, "33.33.33.10"
+
+  config.vm.forward_port 8080, 8080
+
+  config.vm.share_folder "{{ project_name }}", "/home/vagrant/{{ project_name }}", "../../"
+
+  #config.vm.provision :puppet do |puppet|
+  # puppet.manifests_path = "../puppet/manifests"
+  # puppet.manifest_file  = "development.pp"
+  #end
+  
+  config.vm.customize [
+    "modifyvm", :id, 
+    "--name", "{{ project_name }}_dev", 
+    "--memory", "512"
+  ]
+end
