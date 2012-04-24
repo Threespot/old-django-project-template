@@ -56,8 +56,6 @@ PROJECT_DIR = os.path.normpath(os.path.join(
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"

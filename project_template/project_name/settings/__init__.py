@@ -3,7 +3,9 @@ import os
 """
 This module attempts to find settings in two ways:
 
-1. Via an environmental variable: ``DJANGO_RUNTIME_ENVIRONMENT`` which should be one of the following: "dev", "staging", or "production". If the variable is not set, the {{ project_name }} project will default to "dev"
+1. Via an environmental variable: ``DJANGO_RUNTIME_ENVIRONMENT`` which should be
+one of the following: "dev", "staging", or "production". If the variable is not
+set, the {{ project_name }} project will default to "dev"
 
 2. Via a ``local_settings.py`` file, placed in this directory. Under no
 circumstances should this file be versioned. It is solely to override settings
@@ -22,14 +24,14 @@ rather than replacing them. (NB: These base settings are all iterables.) This
 allows you to--for example--add some additional apps to be installed without
 replacing all the base ones.
 
-If you want to define some settings that are common for all environments, you 
+If you want to define some settings that are common for all environments, you
 should do so in the ``base.py`` module in this directory.
 
 """
 
 
 # Import base settings
-base =  __import__('settings.base', {}, {}, ['base'], -1)
+base =  __import__('{{project_name }}.settings.base', {}, {}, ['base'], -1)
 for setting in dir(base):
     if setting == setting.upper():
         locals().update({setting: getattr(base, setting)})
