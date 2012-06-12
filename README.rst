@@ -1,5 +1,5 @@
 #############################################
-Threespot Project Bootsrapping
+Threespot Django Project Bootstrapping
 #############################################
 
 What is this?
@@ -7,6 +7,8 @@ What is this?
 
 This is a project template for Django 1.4+, which introduces the new `project templates <https://docs.djangoproject.com/en/1.4/releases/1.4/#custom-project-and-app-templates>`_ feature.
 It should be used whenever a new Django project is started to ensure the consistency of all of Threespot's Django project layouts. It also provides lots of useful features which will get development up and running more quickly.
+
+Note: despite naming similarities, this project has nothing to do with Twitter's `bootstrap <http://twitter.github.com/bootstrap/>`_ project.
 
 What's in it?
 ===================
