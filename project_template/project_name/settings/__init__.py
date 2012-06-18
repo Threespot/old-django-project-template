@@ -47,7 +47,7 @@ if not runtime_env in allowed_envs:
 
 try:
     environment = __import__(
-        'settings.%s' % runtime_env,
+        '{{project_name }}.settings.%s' % runtime_env,
         globals(),
         locals(),
         [runtime_env],
