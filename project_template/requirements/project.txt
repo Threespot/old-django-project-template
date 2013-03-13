@@ -1,5 +1,0 @@
-# These are the libraries that are required to run the {{ project_name}} project.
-
-docutils
-Django==1.4.1
-Sphinx==1.1.3

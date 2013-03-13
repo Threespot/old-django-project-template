@@ -4,7 +4,7 @@ TEMPLATE_DEBUG = DEBUG
 # Django debug toolbar and Django extensions are both highly useful
 # utilities. To install them, run::
 #
-#    ?> pip install {{ project_directory }}/requirements/development.txt
+#    ?> pip install {{ project_name }}/requirements-dev.txt
 #
 INSTALLED_APPS_ENV_ADDITIONS = (
     'debug_toolbar',
@@ -23,11 +23,21 @@ def _ddt_check(request):
     if request.user.is_authenticated():
         return True
     return False
-    
+
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': _ddt_check 
+    'SHOW_TOOLBAR_CALLBACK': _ddt_check
 }
 
 # Log sent emails to the console.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Don't compress any static files.
+COMPRESS_ENABLED = True
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': "/tmp/{{ project_name }}_file_cache",
+    }
+}
