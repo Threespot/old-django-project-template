@@ -29,7 +29,7 @@ How do I use it?
 
 Clone the repo from github::
 
-    ?> git clone git@github.com:Threespot/django-bootstrap.git
+    ?> git clone git@github.com:Threespot/django-project-template.git
 
 Then run the ``startproject`` command with the following arguments::
 
